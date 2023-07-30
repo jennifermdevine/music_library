@@ -10,7 +10,7 @@ import ArtistView from './components/ArtistView'
 
 function App() {
   const [data, setData] = useState([])
-  const [message, setMessage] = useState("Search for music!")
+  const [message, setMessage] = useState("Type below to search for music!")
   const searchInput = useRef('')
   
   const API_URL = 'https://itunes.apple.com/search?term='
@@ -42,7 +42,7 @@ function App() {
                     handleSearch: handleSearch
                   }}>
                   <SearchBar />
-                 </SearchContext.Provider>
+                  </SearchContext.Provider>
           <DataContext.Provider value={data} >
           <Gallery data={data}/>
           </DataContext.Provider>

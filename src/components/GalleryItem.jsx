@@ -7,19 +7,25 @@ export default function GalleryItem(props) {
     const simpleStyle = {
         'width': '25vw',
         'height': '20vh',
-        'border': '1px solid black',
-        'margin': '2px'
+        'border': '2px solid black',
+        'margin': '2px',
+        alignItems: "center",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-around",
+        flexWrap: "wrap"
     }
     
     const detailStyle = {
         'width': '80vw',
         'height': '20vh',
-        'border': '1px solid black',
+        'border': '2px solid black',
         'margin': '2px',
         'backgroundImage': `url(${props.song.artworkUrl100})`,
         'backgroundRepeat': 'no-repeat',
         'backgroundSize': 'cover',
-        'color': 'yellow'
+        color: 'white',
+        textShadow : '2px 1px black'
     }
     
 
@@ -47,8 +53,7 @@ export default function GalleryItem(props) {
                     </Link>
                 </h3>
                 <h4>{props.song.primaryGenreName}</h4>
-                <h4>{props.song.releaseDate}</h4>
-            </div>
+                </div>
         )
     }
     
