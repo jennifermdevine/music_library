@@ -1,4 +1,4 @@
-import { useState, useRef, Fragment } from 'react';
+import { useState, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
 import SearchBar  from './components/SearchBar';
@@ -36,7 +36,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={
-            <Fragment>
+            <>
                   <SearchContext.Provider value={{
                     term: searchInput,
                     handleSearch: handleSearch
@@ -46,7 +46,7 @@ function App() {
           <DataContext.Provider value={data} >
           <Gallery data={data}/>
           </DataContext.Provider>
-            </Fragment>
+            </>
           } />
         <Route path="/album/:id" element={<AlbumView />} />
         <Route path="/artist/:id" element={<ArtistView />} />
